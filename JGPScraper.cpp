@@ -1,3 +1,8 @@
+/*
+HH:MM\n
+
+*/
+
 #define _CRT_SECURE_NO_DEPRECATE
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -6,6 +11,8 @@
 
 using namespace std;
 
+FILE *ulaz;
+int pocetak, kraj;
 ofstream a, b, c, d, e;
 
 string osnovni("Osnovni polaci.txt");
@@ -30,81 +37,73 @@ void rastavi(int br) {
 
 void unos() {
 
-	int pocetak, kraj;
-	cout << "Unesi cas prvog polaska: ";
-	cin >> pocetak;
-	cout << "Unesi cas poslednjeg polaska: ";
-	cin >> kraj;
-
-	cout << endl << "UNOS POLAZAKA" << endl;
-
+	//cout << "UNOS POLAZAKA" << endl;
+	
 	for (int cas = pocetak; cas <= kraj; cas++) {
 
-		if (pocetak == 99 || kraj == 99)
-			break;
-		
-		char niz[100];
-		cout << "Unesi polaske koji polaze u " << cas << "h:" << endl;
-		cin.sync();
-		cin.getline(niz, 100);
-		cin.sync();
+		char niz[200];
+		fgets(niz, 200, ulaz);
 
-		int i = 0;
-		while (i < strlen(niz)) {
+		if (strcmp(niz, " \n") == 0) {
+			//cout << "Preskocena linija" << endl;
+			--cas;
+		} 
+		else {
 
-			if (isdigit(niz[i])) {
+			int i = 0;
+			while (i < strlen(niz)) {
 
-				char temp[10];
-				int t = 0;
-				while (isdigit(niz[i]) && niz[i] != NULL)
-					temp[t++] = niz[i++];
-				temp[t] = '\0';
+				if (isdigit(niz[i])) {
 
-				if (strlen(temp) == 0 || strcmp(temp, "99") == 0)
-					break;
+					char temp[10];
+					int t = 0;
+					while (isdigit(niz[i]) && niz[i] != NULL)
+						temp[t++] = niz[i++];
+					temp[t] = '\0';
 
-				if (niz[i] == '\0' || niz[i] == ',' || niz[i] == '.')
-					if (cas < 10)
-						a << "0" << cas << ":" << temp << endl;
-					else
-						a << cas << ":" << temp << endl;
-				else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i + 3] != '\0' 
-					&& niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*' 
-					&& niz[i + 3] == '*')
-					if (cas < 10)
-						e << "0" << cas << ":" << temp << endl;
-					else
-						e << cas << ":" << temp << endl;
-				else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i] == '*' 
-					&& niz[i + 1] == '*' && niz[i + 2] == '*') 
-					if (cas < 10)
-						d << "0" << cas << ":" << temp << endl;
-					else
-						d << cas << ":" << temp << endl;
-				else if (niz[i + 1] != '\0' && niz[i] == '*' && niz[i + 1] == '*') 
-					if (cas < 10)
-						c << "0" << cas << ":" << temp << endl;
-					else
-						c << cas << ":" << temp << endl;
-				else if (niz[i] == '*') 
-					if (cas < 10)
-						b << "0" << cas << ":" << temp << endl;
-					else
-						b << cas << ":" << temp << endl;
-				
+					if (strlen(temp) == 0 || strcmp(temp, "99") == 0)
+						break;
+
+					if (niz[i] == '\0' || niz[i] == ',' || niz[i] == '.' || niz[i] == '\n')
+						if (cas < 10)
+							a << "0" << cas << ":" << temp << endl;
+						else
+							a << cas << ":" << temp << endl;
+					else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i + 3] != '\0' && niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*' && niz[i + 3] == '*')
+						if (cas < 10)
+							e << "0" << cas << ":" << temp << endl;
+						else
+							e << cas << ":" << temp << endl;
+					else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*')
+						if (cas < 10)
+							d << "0" << cas << ":" << temp << endl;
+						else
+							d << cas << ":" << temp << endl;
+					else if (niz[i + 1] != '\0' && niz[i] == '*' && niz[i + 1] == '*')
+						if (cas < 10)
+							c << "0" << cas << ":" << temp << endl;
+						else
+							c << cas << ":" << temp << endl;
+					else if (niz[i] == '*')
+						if (cas < 10)
+							b << "0" << cas << ":" << temp << endl;
+						else
+							b << cas << ":" << temp << endl;
+
+				}
+
+				++i;
 			}
-
-			++i;
 
 		}
 
 	}
-
+	
 }
 
 void radniDan() {
 
-	cout << endl << "Unos: RADNI DAN" << endl << endl;
+	//cout << "Unos: RADNI DAN" << endl;
 
 	if (a.is_open())
 		a << "RADNI DAN:" << endl;
@@ -119,11 +118,13 @@ void radniDan() {
 
 	unos();
 
+	//cout << "Unos zavrsen: RADNI DAN" << endl;
+
 }
 
 void subota() {
 
-	cout << endl << "Unos: SUBOTA" << endl << endl;
+	//cout << "Unos: SUBOTA" << endl;
 
 	if (a.is_open())
 		a << "SUBOTA:" << endl;
@@ -138,11 +139,13 @@ void subota() {
 
 	unos();
 
+	//cout << "Unos zavrsen: SUBOTA" << endl;
+
 }
 
 void nedelja() {
 
-	cout << endl << "Unos: NEDELJA" << endl << endl;
+	//cout << "Unos: NEDELJA" << endl;
 
 	if (a.is_open())
 		a << "NEDELJA:" << endl;
@@ -157,9 +160,13 @@ void nedelja() {
 
 	unos();
 
+	//cout << "Unos zavrsen: NEDELJA" << endl;
+
 }
 
 void zatvori() {
+
+	fclose(ulaz);
 
 	if (a.is_open())
 		a.close();
@@ -176,7 +183,7 @@ void zatvori() {
 
 void main() {
 	
-	cout << "*** JGPScraper ***" << endl;
+	cout << "*** JGPScraper - laxsrbija***";
 	char ans;
 
 
@@ -184,9 +191,17 @@ void main() {
 
 		cout << endl;
 
+		char naziv[50];
+		cout << endl << "Unesi naziv datoteke: ";
+		cin >> naziv;
+
+		ulaz = fopen(naziv, "r");
+
 		char linija[10];
-		cout << "Unesi broj linije: ";
-		cin >> linija;
+		int linijaB;
+		fscanf(ulaz, "%d", &linijaB);
+		cout << "Unos linije " << linijaB << ":" << endl;
+		_itoa(linijaB, linija, 10);
 		strcat(linija, " - ");
 
 		string osnovniA(linija);
@@ -201,8 +216,7 @@ void main() {
 		spec4A += spec4;
 
 		int spec;
-		cout << "Unesi broj specijalnih polazaka (0-4): ";
-		cin >> spec;
+		fscanf(ulaz, "%d", &spec);
 
 		if (spec > 4) {
 			spec = 4;
@@ -225,6 +239,11 @@ void main() {
 		if (spec == 4)
 			e.open(spec4A, ofstream::out);
 
+		fscanf(ulaz, "%d", &pocetak);
+		cout << "Pocetni polazak postavljen na: " << pocetak << endl;
+		fscanf(ulaz, "%d", &kraj);
+		cout << "Poslednji polazak postavljen na: " << kraj << endl;
+
 		radniDan();
 		rastavi(spec);
 		subota();
@@ -233,7 +252,9 @@ void main() {
 
 		zatvori();
 
-		cout << "Nastaviti sa unosom (y/n)? ";
+		cout << "OK!" << endl;
+
+		cout << endl << "Nastaviti sa unosom (y/n)? ";
 		cin >> ans;
 
 	} while (ans == 'y');
