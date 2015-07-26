@@ -36,18 +36,14 @@ void rastavi(int br) {
 }
 
 void unos() {
-
-	//cout << "UNOS POLAZAKA" << endl;
 	
 	for (int cas = pocetak; cas <= kraj; cas++) {
 
 		char niz[200];
 		fgets(niz, 200, ulaz);
 
-		if (strcmp(niz, "\n") == 0) {
-			//cout << "Preskocena linija" << endl;
+		if (strcmp(niz, "\n") == 0) 
 			--cas;
-		} 
 		else {
 
 			int i = 0;
@@ -60,7 +56,6 @@ void unos() {
 					while (isdigit(niz[i]) && niz[i] != NULL)
 						temp[t++] = niz[i++];
 					temp[t] = '\0'; 
-					//cout << cas << ":" << temp << endl;
 					if (strlen(temp) == 0 || strcmp(temp, "q") == 0) 
 						break;
 
@@ -70,12 +65,15 @@ void unos() {
 							a << "0" << cas << ":" << temp << endl;
 						else
 							a << cas << ":" << temp << endl;
-					else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i + 3] != '\0' && niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*' && niz[i + 3] == '*')
+					else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' 
+						&& niz[i + 3] != '\0' && niz[i] == '*' 
+						&& niz[i + 1] == '*' && niz[i + 2] == '*' && niz[i + 3] == '*')
 						if (cas < 10)
 							e << "0" << cas << ":" << temp << endl;
 						else
 							e << cas << ":" << temp << endl;
-					else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*')
+					else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' 
+						&& niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*')
 						if (cas < 10)
 							d << "0" << cas << ":" << temp << endl;
 						else
@@ -97,9 +95,8 @@ void unos() {
 			}
 
 		}
-		//cout << cas << endl;
+		
 	}
-	//system("pause");
 }
 
 void dan(char k[]) {
@@ -139,8 +136,8 @@ void zatvori() {
 void main() {
 	
 	cout << "*** JGPScraper - laxsrbija ***";
+	
 	char ans;
-
 
 	do {
 
