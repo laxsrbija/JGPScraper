@@ -64,7 +64,7 @@ void unos() {
 					if (strlen(temp) == 0 || strcmp(temp, "q") == 0)
 						break;
 
-					if (niz[i] == '\0' || niz[i] == ',' || niz[i] == '.' || niz[i] == '\n')
+					if (niz[i] != '*')
 						if (cas < 10)
 							a << "0" << cas << ":" << temp << endl;
 						else
