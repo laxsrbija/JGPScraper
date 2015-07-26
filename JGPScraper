@@ -68,12 +68,15 @@ void unos() {
 						a << "0" << cas << ":" << temp << endl;
 					else
 						a << cas << ":" << temp << endl;
-				else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i + 3] != '\0' && niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*' && niz[i + 3] == '*')
+				else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i + 3] != '\0' 
+					&& niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*' 
+					&& niz[i + 3] == '*')
 					if (cas < 10)
 						e << "0" << cas << ":" << temp << endl;
 					else
 						e << cas << ":" << temp << endl;
-				else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i] == '*' && niz[i + 1] == '*' && niz[i + 2] == '*') 
+				else if (niz[i + 1] != '\0' && niz[i + 2] != '\0' && niz[i] == '*' 
+					&& niz[i + 1] == '*' && niz[i + 2] == '*') 
 					if (cas < 10)
 						d << "0" << cas << ":" << temp << endl;
 					else
