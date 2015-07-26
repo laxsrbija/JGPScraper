@@ -44,7 +44,7 @@ void unos() {
 		char niz[200];
 		fgets(niz, 200, ulaz);
 
-		if (strcmp(niz, " \n") == 0) {
+		if (strcmp(niz, "\n") == 0) {
 			//cout << "Preskocena linija" << endl;
 			--cas;
 		} 
@@ -59,10 +59,11 @@ void unos() {
 					int t = 0;
 					while (isdigit(niz[i]) && niz[i] != NULL)
 						temp[t++] = niz[i++];
-					temp[t] = '\0';
-
-					if (strlen(temp) == 0 || strcmp(temp, "q") == 0)
+					temp[t] = '\0'; 
+					//cout << cas << ":" << temp << endl;
+					if (strlen(temp) == 0 || strcmp(temp, "q") == 0) 
 						break;
+
 
 					if (niz[i] != '*')
 						if (cas < 10)
@@ -96,9 +97,9 @@ void unos() {
 			}
 
 		}
-
+		//cout << cas << endl;
 	}
-	
+	//system("pause");
 }
 
 void dan(char k[]) {
