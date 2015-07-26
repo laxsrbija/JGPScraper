@@ -137,7 +137,7 @@ void zatvori() {
 
 void main() {
 	
-	cout << "*** JGPScraper - laxsrbija***";
+	cout << "*** JGPScraper - laxsrbija ***";
 	char ans;
 
 
