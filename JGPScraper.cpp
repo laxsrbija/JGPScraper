@@ -153,10 +153,9 @@ void main() {
 		ulaz = fopen(naziv, "r");
 
 		char linija[10];
-		int linijaB;
-		fscanf(ulaz, "%d", &linijaB);
-		cout << "Unos linije " << linijaB << ":" << endl;
-		_itoa(linijaB, linija, 10);
+		fscanf(ulaz, "%s", linija);
+		cout << "Unos linije " << linija << ":" << endl;
+	
 		strcat(linija, " - ");
 
 		string osnovniA(linija);
