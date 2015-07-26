@@ -101,66 +101,20 @@ void unos() {
 	
 }
 
-void radniDan() {
-
-	//cout << "Unos: RADNI DAN" << endl;
+void dan(char k[]) {
 
 	if (a.is_open())
-		a << "RADNI DAN:" << endl;
+		a << k << ":" << endl;
 	if (b.is_open())
-		b << "RADNI DAN:" << endl;
+		b << k << ":" << endl;
 	if (c.is_open())
-		c << "RADNI DAN:" << endl;
+		c << k << ":" << endl;
 	if (d.is_open())
-		d << "RADNI DAN:" << endl;
+		d << k << ":" << endl;
 	if (e.is_open())
-		e << "RADNI DAN:" << endl;
+		e << k << ":" << endl;
 
 	unos();
-
-	//cout << "Unos zavrsen: RADNI DAN" << endl;
-
-}
-
-void subota() {
-
-	//cout << "Unos: SUBOTA" << endl;
-
-	if (a.is_open())
-		a << "SUBOTA:" << endl;
-	if (b.is_open())
-		b << "SUBOTA:" << endl;
-	if (c.is_open())
-		c << "SUBOTA:" << endl;
-	if (d.is_open())
-		d << "SUBOTA:" << endl;
-	if (e.is_open())
-		e << "SUBOTA:" << endl;
-
-	unos();
-
-	//cout << "Unos zavrsen: SUBOTA" << endl;
-
-}
-
-void nedelja() {
-
-	//cout << "Unos: NEDELJA" << endl;
-
-	if (a.is_open())
-		a << "NEDELJA:" << endl;
-	if (b.is_open())
-		b << "NEDELJA:" << endl;
-	if (c.is_open())
-		c << "NEDELJA:" << endl;
-	if (d.is_open())
-		d << "NEDELJA:" << endl;
-	if (e.is_open())
-		e << "NEDELJA:" << endl;
-
-	unos();
-
-	//cout << "Unos zavrsen: NEDELJA" << endl;
 
 }
 
@@ -244,11 +198,11 @@ void main() {
 		fscanf(ulaz, "%d", &kraj);
 		cout << "Poslednji polazak postavljen na: " << kraj << endl;
 
-		radniDan();
+		dan("RADNI DAN");
 		rastavi(spec);
-		subota();
+		dan("SUBOTA");
 		rastavi(spec);
-		nedelja();
+		dan("NEDELJA");
 
 		zatvori();
 
