@@ -1,6 +1,5 @@
-<br_linije> <br_specijalnih_polazaka> <prvi_polazak> <poslednji_polazak>
-<niz_polazaka>
+br_linije br_specijalnih_polazaka prvi_polazak poslednji_polazak
+string_polazaka
+string_polazaka
+string_polazaka
 ...
-...
-...
-</niz_polazaka>
