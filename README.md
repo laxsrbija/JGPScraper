@@ -30,10 +30,15 @@ string_polazaka
 ```
 
 *br_linije* - Označava broj linije. Može sadržati i slova. Koristi se isključivo u nazivu izlazne datoteke.
+
 *br_specijalnih_polazaka* - Označava specijalan broj polazaka. Može imati vrednost u opsegu 0-4.
+
 *prvi_polazak* - Čas prvog polaska
+
 *poslednji_polazak* - Čas poslednjeg polaska
+
 *string_polazaka* - Sirov string koji sadrži minute polazaka, prekopiran direktno sa sajta JGP-a
+
 *q* - Oznaka da nema polazaka u datom času (čas se preskače)
 
 Ekstenzija i naziv datoteke nisu važni, ali se preporučuje *TXT*.
@@ -102,7 +107,7 @@ q
 ```
 
 ### Primer izlaza
-Kako linija 7 ima dva specijalna polaska, generisaće se tri fajla sa nazivima *7 - Osnovni polaci*, *7 - Specijalni polasci 1* i *7 - Specijalni polasci 2*.
+Kako linija 7 ima dva specijalna polaska, generisaće se tri datoteke sa nazivima *7 - Osnovni polaci*, *7 - Specijalni polasci 1* i *7 - Specijalni polasci 2*.
 
 **7 - Osnovni polaci**
 ```
@@ -218,9 +223,9 @@ SUBOTA:
 
 NEDELJA:
 20:10
-...
 ```
 
 ### Licenca
 Copyright (c) 2015 Lazar Stanojević. 
+
 Pogledati LICENSE datoteku za informacije i ograničenja licence (MIT).
