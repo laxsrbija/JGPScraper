@@ -1,7 +1,7 @@
-# JGPScraper
+﻿# JGPScraper
 ===========
 ### JGPScraper
-JGPScraper je softver za delimičnu automatizaciju unosa polazaka gradskog prevoza i adekvatno formatiranje za unos preko sajta Moovit.
+JGPScraper je softver za parcijalnu automatizaciju unosa polazaka gradskog prevoza i adekvatno formatiranje za unos preko sajta Moovit.
 Skraćuje trajanje unosa po liniji sa 10 na manje od 2 minuta.
 
 ### Zahtevi
@@ -13,9 +13,9 @@ https://www.microsoft.com/en-gb/download/details.aspx?id=40784
 ### Upotreba
 JGPScraper funkcioniše tako što koristi sirove nizove podataka sa sajta JGP-a i od njih generiše datoteke sa sadržajem koji se može direktno uneti.
 
-Nakon otvaranja programa, od korisnika se traži da unese adresu do datoteke iz koje se čitaju polasci. Ta datoteka mora biti u obliku koji se nalazi ispod da bi čitanje bilo uspešno.
+Nakon otvaranja programa, od korisnika se traži da unese adresu do datoteke iz koje se čitaju polasci. Ta datoteka mora biti u obliku koji se nalazi ispod da bi čitanje bilo korektno.
 
-Zavisno od toga da li linija ima specijalne polaske, program će generisati jednu ili više datoteka sa polascima u obliku *HH:MM* za radni dan, subotu i nedelju.
+Zavisno od toga da li linija ima specijalne polaske, program će generisati jednu ili više datoteka sa sadržajem oblika *HH:MM* za radni dan, subotu i nedelju.
 
 Za više detalja, pogledati primer ulaza i izlaza.
 
@@ -222,5 +222,5 @@ NEDELJA:
 ```
 
 ### Licenca
-Copyright (c) 2015 Lazar Stanojević. Pogledati LICENSE datoteku za informacije i ograničenja licence (MIT).
-
+Copyright (c) 2015 Lazar Stanojević. 
+Pogledati LICENSE datoteku za informacije i ograničenja licence (MIT).
