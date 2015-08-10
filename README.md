@@ -5,7 +5,7 @@ JGPScraper je softver za parcijalnu automatizaciju unosa polazaka gradskog prevo
 Skraćuje trajanje unosa po liniji sa 10 na manje od 2 minuta.
 
 ### Zahtevi
-Pre upotrebe programa, neophodno je korisnik ima instaliran Visual C++ Redistributable Packages for Visual Studio 2013.
+Pre upotrebe programa, neophodno je da korisnik ima instaliran Visual C++ Redistributable Packages for Visual Studio 2013.
 
 Paket softvera je moguće besplatno preuzeti sa sledeće adrese:
 https://www.microsoft.com/en-gb/download/details.aspx?id=40784
