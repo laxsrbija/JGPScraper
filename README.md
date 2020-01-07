@@ -5,10 +5,18 @@ JGPScraper je softver za parcijalnu automatizaciju unosa polazaka gradskog prevo
 Skraćuje trajanje unosa po liniji sa 10 na manje od 2 minuta.
 
 ### Zahtevi
-Pre upotrebe programa, neophodno je da korisnik ima instaliran Visual C++ Redistributable Packages for Visual Studio 2013.
+Pre upotrebe programa, neophodno je da korisnik ima instalirano Java 8 okruženje (JDK ili JRE).
 
 Paket softvera je moguće besplatno preuzeti sa sledeće adrese:
-https://www.microsoft.com/en-gb/download/details.aspx?id=40784
+https://adoptopenjdk.net/installation.html
+
+### Pokretanje
+Nakon preuzimanja najnovije verzije programa, potrebno je otvoriti Terminal (ili Command Prompt) u istom folderu i izvršiti sledeću naredbu:
+
+```java -jar JGPScraper-2.0.jar```
+
+Moguće je pokretati aplikaciju na drugom jeziku dodavanjem oznake jezika nakon naredbe iznad (npr. ``java -jar JGPScraper-2.0.jar en``).
+Trenutno su podržani jezici ``sr`` (podrazumevani) i ``en``.
 
 ### Upotreba
 JGPScraper funkcioniše tako što koristi sirove nizove podataka sa sajta JGP-a i od njih generiše datoteke sa sadržajem koji se može direktno uneti.
@@ -29,17 +37,17 @@ string_polazaka
 ...
 ```
 
-*br_linije* - Označava broj linije. Može sadržati i slova. Koristi se isključivo u nazivu izlazne datoteke.
+``br_linije`` - Označava broj linije. Može sadržati i slova. Koristi se isključivo u nazivu izlazne datoteke.
 
-*br_specijalnih_polazaka* - Označava specijalan broj polazaka. Može imati vrednost u opsegu 0-4.
+``br_specijalnih_polazaka`` - Označava specijalan broj polazaka. Može imati vrednost u opsegu 0-4.
 
-*prvi_polazak* - Čas prvog polaska
+``prvi_polazak`` - Čas prvog polaska
 
-*poslednji_polazak* - Čas poslednjeg polaska
+``poslednji_polazak`` - Čas poslednjeg polaska
 
-*string_polazaka* - Sirov string koji sadrži minute polazaka, prekopiran direktno sa sajta JGP-a
+``string_polazaka`` - Sirov string koji sadrži minute polazaka, prekopiran direktno sa sajta JGP-a
 
-*q* - Oznaka da nema polazaka u datom času (čas se preskače)
+``q`` - Oznaka da nema polazaka u datom času (čas se preskače)
 
 Ekstenzija i naziv datoteke nisu važni, ali se preporučuje *TXT*.
 
@@ -226,6 +234,6 @@ NEDELJA:
 ```
 
 ### Licenca
-Copyright (c) 2015 Lazar Stanojević. 
+Copyright (c) 2020 Lazar Stanojević. 
 
 Pogledati LICENSE datoteku za informacije i ograničenja licence (MIT).
